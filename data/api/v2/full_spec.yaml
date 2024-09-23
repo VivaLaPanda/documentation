@@ -19531,6 +19531,25 @@ components:
         meta:
           $ref: '#/components/schemas/ResponseMetaAttributes'
       type: object
+    SecurityMonitoringReferenceTable:
+      description: Reference table for the rule.
+      properties:
+        checkPresence:
+          description: Whether to include or exclude the matched values.
+          type: boolean
+        columnName:
+          description: The name of the column in the reference table.
+          type: string
+        logFieldPath:
+          description: The field in the log to match against the reference table.
+          type: string
+        ruleQueryName:
+          description: The name of the rule query to apply the reference table to.
+          type: string
+        tableName:
+          description: The name of the reference table.
+          type: string
+      type: object
     SecurityMonitoringRuleCase:
       description: Case when signal is generated.
       properties:
@@ -20035,6 +20054,11 @@ components:
           description: Queries for selecting logs which are part of the rule.
           items:
             $ref: '#/components/schemas/SecurityMonitoringRuleQuery'
+          type: array
+        referenceTables:
+          description: Reference tables for the rule.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringReferenceTable'
           type: array
         tags:
           description: Tags for generated signals.
@@ -20740,6 +20764,11 @@ components:
           items:
             $ref: '#/components/schemas/SecurityMonitoringStandardRuleQuery'
           type: array
+        referenceTables:
+          description: Reference tables for the rule.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringReferenceTable'
+          type: array
         tags:
           description: Tags for generated signals.
           example:
@@ -20806,6 +20835,11 @@ components:
           example: []
           items:
             $ref: '#/components/schemas/SecurityMonitoringStandardRuleQuery'
+          type: array
+        referenceTables:
+          description: Reference tables for the rule.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringReferenceTable'
           type: array
         tags:
           description: Tags for generated signals.
@@ -20947,6 +20981,11 @@ components:
           items:
             $ref: '#/components/schemas/SecurityMonitoringStandardRuleQuery'
           type: array
+        referenceTables:
+          description: Reference tables for the rule.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringReferenceTable'
+          type: array
         tags:
           description: Tags for generated signals.
           items:
@@ -21010,6 +21049,11 @@ components:
           example: []
           items:
             $ref: '#/components/schemas/SecurityMonitoringStandardRuleQuery'
+          type: array
+        referenceTables:
+          description: Reference tables for the rule.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringReferenceTable'
           type: array
         tags:
           description: Tags for generated signals.
